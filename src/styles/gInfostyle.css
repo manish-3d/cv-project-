@@ -1,0 +1,10 @@
+#genInfo{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    flex-wrap: wrap;
+    padding-left: 10%;
+}
+.exp{
+    padding-bottom: 10%;
+}
