@@ -1,11 +1,11 @@
 import "../styles/gInfostyle.css";
 import React, { useState } from "react";
 
-function GeneralInfo() {
+function GeneralInfo({editing}) {
   const [name, setName] = useState("");       
   const [email, setEmail] = useState("");     
   const [phone, setPhone] = useState("");     
-  const [editing, setEditing] = useState(true); 
+  
 
   return (
     <div id="genInfo">
@@ -42,17 +42,13 @@ function GeneralInfo() {
             onChange={(e) => setPhone(e.target.value)}
             placeholder="xxxxxxxx"
           />
-
-          <button onClick={() => setEditing(false)}>Save</button>
         </>
       ) : (
         // DISPLAY MODE
-        <div>
+        <div id="displayflex">
           <p><strong>Name:</strong> {name}</p>
           <p><strong>Email:</strong> {email}</p>
           <p><strong>Phone:</strong> {phone}</p>
-
-          <button onClick={() => setEditing(true)}>Edit</button>
         </div>
       )}
     </div>

@@ -1,0 +1,11 @@
+.buttons{
+ display: flex ;
+justify-content: center;
+gap: 10em;
+flex-wrap: wrap;
+padding-bottom: 10%;
+}
+#background{
+    width: 100%;
+    
+}
