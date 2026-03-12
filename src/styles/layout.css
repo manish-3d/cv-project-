@@ -1,0 +1,38 @@
+.container{
+  width:100%;
+  display:flex;
+  gap:80px;
+  padding:20px;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+.form-section{
+  flex:1;
+  max-width:30%;
+  background-color:blue;
+  padding:20px;
+  border-radius:10px;
+}
+
+.preview-section{
+  flex:1;
+  background:#ed2525;
+  padding:25px;
+  border-radius:10px;
+  min-height:100%;
+}
+.container{
+  justify-content:center;
+}
+
+.cv-title{
+  text-align:center;
+  margin-top:clamp(1rem,4vw,3rem);
+}
+
+@media(max-width:768px){
+  .container{
+    flex-direction:column;
+  }
+}

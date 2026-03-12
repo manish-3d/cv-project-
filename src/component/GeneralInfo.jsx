@@ -1,56 +1,39 @@
-import "../styles/gInfostyle.css";
-import React, { useState } from "react";
+import React from "react";
 
-function GeneralInfo({editing}) {
-  const [name, setName] = useState("");       
-  const [email, setEmail] = useState("");     
-  const [phone, setPhone] = useState("");     
-  
+function GeneralInfo({ editing, cvData, setCvData }) {
+
+  if (!editing) return null;
 
   return (
     <div id="genInfo">
-      <h1>General-Information</h1>
+      <h2>General Information</h2>
 
-      {editing ? (
-        // FORM MODE
-        <>
-          <label htmlFor="name">Name :</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your full name..."
-            required
-          />
+      <input
+        type="text"
+        placeholder="Name"
+        value={cvData.name}
+        onChange={(e) =>
+          setCvData({ ...cvData, name: e.target.value })
+        }
+      />
 
-          <label htmlFor="email">Email id :</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="johnsnow@gmail.com"
-            required
-          />
+      <input
+        type="email"
+        placeholder="Email"
+        value={cvData.email}
+        onChange={(e) =>
+          setCvData({ ...cvData, email: e.target.value })
+        }
+      />
 
-          <label htmlFor="phone">Phone :</label>
-          <input
-            type="tel"
-            id="phone"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            placeholder="xxxxxxxx"
-          />
-        </>
-      ) : (
-        // DISPLAY MODE
-        <div id="displayflex">
-          <p><strong>Name:</strong> {name}</p>
-          <p><strong>Email:</strong> {email}</p>
-          <p><strong>Phone:</strong> {phone}</p>
-        </div>
-      )}
+      <input
+        type="text"
+        placeholder="Phone"
+        value={cvData.phone}
+        onChange={(e) =>
+          setCvData({ ...cvData, phone: e.target.value })
+        }
+      />
     </div>
   );
 }

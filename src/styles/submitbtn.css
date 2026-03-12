@@ -5,7 +5,7 @@ gap: 10em;
 flex-wrap: wrap;
 padding-bottom: 10%;
 }
-#background{
-    width: 100%;
-    
+#background {
+  max-width: 1200px;
+  margin: auto;
 }

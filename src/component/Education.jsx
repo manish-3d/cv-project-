@@ -1,55 +1,42 @@
-import React, { useState } from "react";
+import React  from "react";
 import "../styles/gInfostyle.css";
 
-function Education({ editing }) {
-  const [school, setSchool] = useState("");
-  const [studyTitle, setStudyTitle] = useState("");
-  const [studyDate, setStudyDate] = useState("");
+function Education({ editing, cvData, setCvData }) {
+
+  if (!editing) return null;
 
   return (
     <div id="genInfo">
-      <h1>Education Details</h1>
+      <h2>Education</h2>
 
-      {editing ? (
-        <>
-          <label htmlFor="school">School Name :</label>
-          <input
-            type="text"
-            id="school"
-            value={school}
-            onChange={(e) => setSchool(e.target.value)}
-            placeholder="Enter school name..."
-            required
-          />
+      <input
+        type="text"
+        placeholder="School Name"
+        value={cvData.school}
+        onChange={(e) =>
+          setCvData({ ...cvData, school: e.target.value })
+        }
+      />
 
-          <label htmlFor="title">Title of Study :</label>
-          <input
-            type="text"
-            id="title"
-            value={studyTitle}
-            onChange={(e) => setStudyTitle(e.target.value)}
-            placeholder="Enter title of study..."
-            required
-          />
+      <input
+        type="text"
+        placeholder="Title of Study"
+        value={cvData.studyTitle}
+        onChange={(e) =>
+          setCvData({ ...cvData, studyTitle: e.target.value })
+        }
+      />
 
-          <label htmlFor="date">Date of Study :</label>
-          <input
-            type="text"
-            id="date"
-            value={studyDate}
-            onChange={(e) => setStudyDate(e.target.value)}
-            placeholder="Enter study year..."
-          />
-        </>
-      ) : (
-        <div>
-          <p><strong>School:</strong> {school}</p>
-          <p><strong>Title of Study:</strong> {studyTitle}</p>
-          <p><strong>Date:</strong> {studyDate}</p>
-        </div>
-      )}
+      <input
+        type="text"
+        placeholder="Date of Study"
+        value={cvData.studyDate}
+        onChange={(e) =>
+          setCvData({ ...cvData, studyDate: e.target.value })
+        }
+      />
     </div>
   );
 }
 
-export default Education; 
+export default Education;
