@@ -38,5 +38,7 @@ function Education({ editing, cvData, setCvData }) {
     </div>
   );
 }
-
+Education.propTypes = {
+  name : PropTypes.string,
+};
 export default Education;
